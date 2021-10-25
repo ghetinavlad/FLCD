@@ -1,12 +1,13 @@
-class PIF:
-    def __init__(self):
-        self.__data = []
+class ProgramInternalForm:
 
-    def add(self, token, pos):
-        self.__data.append((token, pos))
+    def __init__(self):
+        self._items = []
+
+    def add(self, token, position):
+        self._items.append((token, position))
 
     def __str__(self):
         resultToStr = ""
-        for element in self.__data:
-            resultToStr += element[0] + "->" + str(element[1]) + "\n"
+        for tuple in self._items:
+            resultToStr += tuple[0] + "->" + str(tuple[1]) + "\n"
         return resultToStr
