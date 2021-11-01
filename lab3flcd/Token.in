@@ -23,8 +23,8 @@ Tokens
 ==
 !=
 !
-func
-main
+START
+EXIT
 and
 array
 else
@@ -35,4 +35,4 @@ or
 string
 while
 read
-print
+write

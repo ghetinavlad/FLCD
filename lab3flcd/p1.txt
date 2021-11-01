@@ -1,4 +1,4 @@
-func main() {
+START
   int a;
   int b;
   int c;
@@ -7,10 +7,8 @@ func main() {
   read(b);
   read(c);
   int sum;
-  int avg;
   sum = a + b + c;
   avg = sum / 3;
   a = -1;
-
-  print(avg);
-}
+  write(avg);
+EXIT

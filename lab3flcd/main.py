@@ -60,7 +60,7 @@ class ScannerResult:
 
 if __name__ == '__main__':
     scanner_result = ScannerResult()
-    scanner_result.compute_results("p1err.txt")
+    scanner_result.compute_results("p1.txt")
 
     # scanner = Scanner()
     # line = "println('is prime');"

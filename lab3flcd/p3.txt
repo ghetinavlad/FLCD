@@ -1,4 +1,4 @@
-func main() {
+START
   int array[100] arr;
   int size;
   read(size);
@@ -11,5 +11,5 @@ func main() {
       sum = sum + arr[i];
     }
   }
-  print(sum);
-}
+  write(sum);
+EXIT

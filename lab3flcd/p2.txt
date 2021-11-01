@@ -1,4 +1,4 @@
-func main() {
+START
   int n;
   read(n);
   bool ok;
@@ -15,9 +15,9 @@ func main() {
     }
   }
   if (ok == 1) {
-    print('is prime');
+    write('is prime');
   }
   else {
-    print('is not prime');
+    write('is not prime');
   }
-}
+EXIT

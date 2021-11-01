@@ -1,4 +1,4 @@
-func main() {
+START
   int a;
   int b;
   int 7&c;
@@ -12,4 +12,4 @@ func main() {
   avg = sum / 3;
 
   print(avg);
-}
+EXIT
