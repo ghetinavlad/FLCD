@@ -1,11 +1,11 @@
 class FiniteAutomata:
 
     def __init__(self, Q, E, q0, F, S):
-        self.Q = Q  # a finite set of states
-        self.E = E  # a finite set of input symbols(alphabet)
-        self.q0 = q0  # an initial or start state
-        self.F = F  # a set of accept or final states
-        self.S = S  # a set of state transitions
+        self.Q = Q
+        self.E = E
+        self.q0 = q0
+        self.F = F
+        self.S = S
 
     @staticmethod
     def getLine(line):
@@ -39,17 +39,16 @@ class FiniteAutomata:
             F = FiniteAutomata.getLine(file.readline())
             file.readline()
 
-            S = {}  # transitions
+            S = {}
             for line in file:
-                # example (A,0) -> A, source=A, route=0, destination=A
                 source = line.strip().split('->')[0].strip().replace('(', '').replace(')', '').split(',')[0]
-                route = line.strip().split('->')[0].strip().replace('(', '').replace(')', '').split(',')[1]
+                value = line.strip().split('->')[0].strip().replace('(', '').replace(')', '').split(',')[1]
                 destination = line.strip().split('->')[1].strip()
 
-                if (source, route) in S.keys():
-                    S[(source, route)].append(destination)
+                if (source, value) in S.keys():
+                    S[(source, value)].append(destination)
                 else:
-                    S[(source, route)] = [destination]
+                    S[(source, value)] = [destination]
 
             if not FiniteAutomata.validate(Q, E, q0, F, S):
                 raise Exception("Wrong input file.")
@@ -72,7 +71,7 @@ class FiniteAutomata:
     def isAccepted(self, sequence):
         if self.isDfa():
             current = self.q0
-            for symbol in sequence:  # check if we get to a final state
+            for symbol in sequence:
                 if (current, symbol) in self.S.keys():
                     current = self.S[(current, symbol)][0]
                 else:

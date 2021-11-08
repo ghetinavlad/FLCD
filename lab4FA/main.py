@@ -35,18 +35,22 @@ class Console:
         print("7.Check accepted sequence")
 
     def run(self):
-        commands = {'1': self.__readFA, '2': self.__displayStates, '3': self.__displayAlphabet,
-                    '4': self.__displayTransitions, '5': self.__displayFinalStates, '6': self.__checkDFA,
+        commands = {'1': self.__readFA,
+                    '2': self.__displayStates,
+                    '3': self.__displayAlphabet,
+                    '4': self.__displayTransitions,
+                    '5': self.__displayFinalStates,
+                    '6': self.__checkDFA,
                     '7': self.__checkAccepted}
-        stopProgram = False
-        while not stopProgram:
+        stop = False
+        while not stop:
             self.__displayMenu()
             print(">>")
             command = input()
             if command in commands.keys():
                 commands[command]()
             elif command == "stopProgram":
-                stopProgram = True
+                stop = True
             else:
                 continue
 
